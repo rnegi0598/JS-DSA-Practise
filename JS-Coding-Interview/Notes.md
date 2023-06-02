@@ -1,8 +1,9 @@
 # [JS Questions](https://github.com/lydiahallie/javascript-questions)
 
-3.  ## Behaviour of `this` keyword in regular functions vs arrow functions   
+-  ## Q3 
+     Behaviour of `this` keyword in regular functions vs arrow functions   
     - In regular functions, the value of `this` is determined by how the function is called or invoked. 
-    - Arrow functions do not have their own this binding. The value of this in an arrow function is lexically (or statically) scoped. It is determined by the surrounding scope where the arrow function is defined. The value of `this` in arrow function is always bound to the value of `this` in the closest non-arrow parent function.
+    - Arrow functions do not have their own `this` binding. The value of this in an arrow function is lexically (or statically) scoped. It is determined by the surrounding scope where the arrow function is defined. The value of `this` in arrow function is always bound to the value of `this` in the closest non-arrow parent function.
 
     ```js
         const obj1={
@@ -35,7 +36,7 @@
     ```
 
 
-4.  
+- ## Q4 
 ```js
 +true //1
 +false //0
@@ -46,7 +47,8 @@
 !'abcd' //false
 
 ```
-5. In JavaScript, all object keys are strings (unless it's a Symbol). Even though we might not type them as strings, they are always converted into strings under the hood.
+-  ## Q5
+  In JavaScript, all object keys are strings (unless it's a Symbol). Even though we might not type them as strings, they are always converted into strings under the hood.
 ```js
 const obj1={
   apple:23,
@@ -65,13 +67,15 @@ obj1[apple]  //error
 obj1[orange] //error
 
 ```
-8. static method
+-  ## Q8
+ Static method
     - static method are defined on an object class and not on an object.
     - Static properties cannot be directly accessed on instances of the class. Instead, they're accessed on the class itself.
     - Static properties and methods are inherited.
 
-9. functions are objects in JS.
-- In a constructor function this does not have a value. It is a substitute for the new object. The value of this will become the new object when a new object is created.
+-  ## Q9
+ functions are objects in JS.
+- In a constructor function `this` does not have a value. It is a substitute for the new object. The value of `this` will become the new object when a new object is created.
 ```js
 // object constructor function
 function Person(first, last) {
@@ -95,10 +99,12 @@ myMother.sayHello(); //"hello"
 
 ```
 
-10. All JavaScript objects inherit properties and methods from a prototype.
+-  ## Q10
+  All JavaScript objects inherit properties and methods from a prototype.
 The JavaScript prototype property allows you to add new properties and methods to object constructors.
 
-13. Bubbling and Capturing  (Capturing > Target > Bubbling)
+-  ## Q13
+  Bubbling and Capturing  (Capturing > Target > Bubbling)
     - Bubbling : When an event happens on an element, it first runs the handlers on it, then on its parent, then all the way up on other ancestors.
         ```html
         <form onclick="alert('form')">FORM
@@ -115,11 +121,11 @@ The JavaScript prototype property allows you to add new properties and methods t
 
         The process is called “bubbling”, because events “bubble” from the inner element up through parents like a bubble in the water.  
 
-    - event.target
+    - `event.target`
     A handler on a parent element can always get the details about where it actually happened.  
         - event.target : element where the user clicked
         - this (=event.currentTarget) : “current” element, the one that has a currently running handler on it.
-    - Stopping bubbling event.stopPropagation()  
+    - Stopping bubbling `event.stopPropagation() ` 
     event.stopPropagation() stops the move upwards, but on the current element all other handlers will run.  
     To stop the bubbling and prevent handlers on the current element from running, there’s a method event.stopImmediatePropagation(). After it no other handlers execute.  
     - capturing   
