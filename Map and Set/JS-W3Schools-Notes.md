@@ -46,25 +46,34 @@ map.set('apple',12)
 
 ## iterating map
 - map.forEach((val,key)=>{})
-- for(let element of map.keys()){
-    console.log(element,map.get(element))   //key val
-}
-- for(let element of map.values()){
+-
+```
+for(let element of map.keys()){
+   console.log(element,map.get(element))   //key val
+} 
+```
+-
+```
+for(let element of map.values()){
     console.log(element);  //val
 }
-- for(let elem of map){
+```
+-
+```
+for(let elem of map){
     console.log(elem) //[key,val]
 }
+```
 
 
 # Set
 Each values occur only once.   
 - new Set()
-    -const set=new Set(["a","b","c"]);
-    -const set=new Set();
-     set.add("a");
-     set.add("b");
-     set.add("c");
+    - const set=new Set(["a","b","c"]);  
+    - const set=new Set();  
+     set.add("a");  
+     set.add("b");  
+     set.add("c");  
 - set.add(value);
 - set.delete(value);
 - set.has(value);
