@@ -78,28 +78,33 @@ str1.endsWith("you") //true
 str1.endsWith("are",19) //true str1.indexOf("are") is 16 
 
 ## string1.slice(start,end) [start,end)
+```
 let str1="helloWorld"  
 str1.slice(2); //"lloWorld"  
 str1.slice(2,4);  //"ll"  
 str1.slice(2,1); //"" note that end is smaller than the beginner
+```
 
 ## string1.substring(start,end) [start,end) 
+```
 let str1="helloWorld"  
 str1.substring(2); //"lloWorld"  
 str1.substring(2,4);  //"ll"  
 str1.substring(2,1);  //"e" it will reverse the start and end if it founds that end is smaller than begin
+```
 
 ## string1.split(separator ,limit) splits string into an array of substring
+```
 let str1="hello world how are you all"  
 str1.split() // ["hello world how are you all];  
 str1.split("") //[ "h", "e", "l", "l", "o", " ", "w", "o", "r", "l", … ]  
 str1.split("",5) //[ "h", "e", "l", "l", "o"]  
 str1.split("o") //["hell"," w","rldh","w are y","u all"]  
-
+```
 ## string1.replace(searchValue,replaceValue) 
 The first argument is the string or a regular expressions and the second one is a string.  
 Only first instance is replaced. For replacing all use replaceAll()  
-
+```
 let originalString = "The color of the sky changes color throughout the day.";  
 let newString = originalString.replace("color", "random");  
 //The random of the sky changes color throughout the day.  
@@ -107,14 +112,17 @@ let newString = originalString.replace("color", "random");
 let originalString = "The color of the sky changes color throughout the day.";  
 let newString = originalString.replaceAll("color", "random");  
 //The random of the sky changes random throughout the day.  
-
+```
 To change more than one substring in a string  
+```
 let originalString = "Using JS, you can change the color of a webpage's background, text, and elements.";  
 let newString = originalString  
     .replace("color", "colour")  
     .replace("JS", "JavaScript");  
 //"Using JavaScript, you can change the colour of a webpage's background, text, and elements."  
-
+```
 ## string.trim() removes whitespaces from both sides of a string
+```
 let text1 = "      Hello World!      ";  
 let text2 = text1.trim(); //"Hello World"  
+```
