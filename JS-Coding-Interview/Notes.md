@@ -40,8 +40,8 @@
 - ## Q4
 
 ```js
-+true + //1
-  false; //0
++true  //1
++false; //0
 
 !0; //true
 !1; //false !2 !3 !4 ...
