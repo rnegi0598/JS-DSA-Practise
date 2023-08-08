@@ -129,14 +129,15 @@ const numbers = [45, 4, 9, 16, 25];
 - numbers.every((val,ind,arr)=>{})  //return true if all the values pass the test.  
 - numbers.some((val,ind,arr)=>{})  //return true if any of the value pass the test  
 
-## numbers.indexOf(item.start)   //index of first occurence of item from start ind 
+## numbers.indexOf(item,start(optional))   //index of first occurence of item from start ind 
 const fruits = ["Apple", "Orange", "Apple", "Mango"];   
 fruits.indexOf("Orange")  //1  
 
-## numbers.lastIndexOf(item, start)
+## numbers.lastIndexOf(item, start(optional))
 
 ## numbers.find((val,ind,arr)=>{} )
 The find() method returns the value of the first array element that passes a test function.  
+```js
 const numbers = [4, 9, 16, 25, 29];  
 numbers.find((val)=>{  
     if(val>18){  
@@ -145,6 +146,7 @@ numbers.find((val)=>{
         return false;  
     }  
 })  
+````
 
 ## numbers.findIndex((val,ind,arr)=>{})
 The findIndex() method returns the index of the first array element that passes a test function.  
