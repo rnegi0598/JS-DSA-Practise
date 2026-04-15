@@ -1,0 +1,26 @@
+{
+  "name": "js-dsa-practise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "ts": "npx tsx index.ts",
+    "js": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rnegi0598/JS-DSA-Practise.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/rnegi0598/JS-DSA-Practise/issues"
+  },
+  "homepage": "https://github.com/rnegi0598/JS-DSA-Practise#readme",
+  "devDependencies": {
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.2"
+  }
+}
