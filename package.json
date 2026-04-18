@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/rnegi0598/JS-DSA-Practise#readme",
   "devDependencies": {
+    "prettier": "3.8.3",
     "tsx": "^4.21.0",
     "typescript": "^6.0.2"
   }

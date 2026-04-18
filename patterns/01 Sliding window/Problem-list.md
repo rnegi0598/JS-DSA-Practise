@@ -52,3 +52,7 @@ Reference: [Top 20 Sliding Window Problems for Beginners](https://leetcode.com/d
 ## Sliding Window on Blocks or Groups
 
 - [ ] [Maximize Active Section with Trade I (Leetcode 3499)](https://leetcode.com/problems/maximize-active-section-with-trade-i/description/)
+
+Extra
+
+- https://leetcode.com/discuss/post/6900561/ultimate-sliding-window-guide-patterns-a-28e9/

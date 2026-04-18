@@ -1,89 +1,51 @@
 // Write your JS solution here, then run: npm run js
-// After testing, move this file to the relevant folder (e.g. Arrays/, Strings/ , /patterns)
+// After testing, move this file to the relevant folder (e.g. Arrays/, Strings/)
 
-/*
-Algorithm 
+// My attempt
 
+/***
+You are given an integer array nums and an integer k. Find the maximum subarray sum of all the subarrays of nums that meet the following conditions:
+- The length of the subarray is k, and
+- All the elements of the subarray are distinct.
+Return the maximum subarray sum of all the subarrays that meet the conditions. If no subarray meets the conditions, return 0.
+A subarray is a contiguous non-empty sequence of elements within an array.
+ */
 
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number}
+ */
+var maximumSubarraySum = function (nums, k) {
+  let ans = 0;
+  let sum = 0;
+  let left = 0;
+  const set = new Set();
 
-*/
+  for (let right = 0; right < nums.length; right++) {
+    // Invariant : Window [left,right-1] will have distinct elements . window size <=k . sum will be sum of all the elements of the window . ans is the maxsum of the windows processed so far.
 
-function maximumSubarraySum(nums, k) {
-  let maxSum = 0,
-    sum = 0;
-
-  const lastOccMap = new Map();
-
-  let start = 0,
-    end = 0;
-  lastOccMap.set(nums[end], end);
-  sum = nums[end];
-
-  while (end < nums.length) {
-    // we get here the window
-    if (end - start + 1 == k) {
-      if (sum > maxSum) {
-        maxSum = sum;
-      }
-
-      sum -= nums[start];
-      start++;
+    // shrink : For adding new right element we have to make the window ready for it to insert . And for that we have to eliminate the duplicate if they exist or shrink the window size so that we have size < k . size of window [left,right-1] = right - left
+    while (set.has(nums[right]) || right - left >= k) {
+      sum -= nums[left];
+      set.delete(nums[left]);
+      left++;
     }
 
-    end++;
+    // Expand
+    // now right element can be safely inserted
+    // on reaching here we can either have size < k or equal to k afer including the new right element
+    sum += nums[right];
+    set.add(nums[right]);
 
-    // we don't have the complete window here
-    // check if the new element is already present or not, appending new element will make the window for comparison
-    const lastOccIndexOfCurrentNumber = lastOccMap.get(nums[end]);
-    const isCurrentElementDuplicate =
-      lastOccIndexOfCurrentNumber !== undefined &&
-      lastOccIndexOfCurrentNumber >= start
-        ? true
-        : false;
-
-    // for duplicate we can reposition the start here
-    if (
-      isCurrentElementDuplicate &&
-      lastOccIndexOfCurrentNumber !== undefined
-    ) {
-      // reposition the start
-      const newStartInd = lastOccIndexOfCurrentNumber + 1;
-      // sum recalculate
-      for (let i = start; i < newStartInd; i++) {
-        sum -= nums[i];
-      }
-
-      start = newStartInd;
+    // Record
+    if (right - left + 1 == k) {
+      ans = Math.max(ans, sum);
     }
-
-    sum += nums[end];
-
-    // console.log(
-    //   `map : ${JSON.stringify(Array.from(lastOccMap.entries()))} , window: ${nums.slice(start, end + 1)} , sum :${sum} `,
-    // );
-
-    // window size reached
-
-    // updat the last occ
-    lastOccMap.set(nums[end], end);
   }
 
-  return maxSum;
-}
-
-// const nums = [9, 9, 9, 9, 9, 9, 9];
-// const nums = [1, 5, 4, 2, 9, 2, 9, 10, 1, 3, 5, 3, 1, 9];
-// const nums = [9, 9, 9, 1, 2, 3];
-const nums = [1, 1, 1, 1, 1, 1];
-const k = 2;
-
-console.log(nums.toString());
-const ans = maximumSubarraySum(nums, k);
-console.log(ans);
-
-// learning
-/**
- * also consider the smallest possible case
- * how to handle 0 , undefined and other falsy values .
- * pseudo code
- */
+  // termination :
+  // the loop wll terminate as right will at some point reach the condition right < nums.length
+  // and for last right = nums.length -1 we should have processed all of the window
+  return ans;
+};
